@@ -1,0 +1,260 @@
+/* =========================================================
+   GATITOS AL AZAR · Primera API · Diseño Web Avanzado
+   ========================================================= */
+
+/* ---------- Variables ---------- */
+:root {
+    --color-fondo: #F3F6F5;
+    --color-superficie: #FFFFFF;
+    --color-texto: #12181B;
+    --color-suave: #5B6B67;
+    --color-acento: #16BFAE;
+    --color-acento-claro: #E3F6F3;
+    --color-borde: #DCE3E1;
+
+    --fuente-ui: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --fuente-codigo: "Courier New", monospace;
+
+    --espacio: 1.5rem;
+    --radio: 16px;
+}
+
+/* ---------- Reset básico ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-ui);
+    line-height: 1.5;
+}
+
+/* ---------- Cabecera ---------- */
+.cabecera {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 3rem var(--espacio) 2rem;
+    text-align: center;
+}
+
+.cabecera__kicker {
+    font-family: var(--fuente-codigo);
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-acento);
+}
+
+.cabecera h1 {
+    font-size: clamp(2.2rem, 7vw, 3.5rem);
+    line-height: 1.1;
+}
+
+.cabecera h1 span {
+    color: var(--color-acento);
+}
+
+.cabecera__texto {
+    color: var(--color-suave);
+}
+
+/* ---------- Contenedor ---------- */
+main {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 var(--espacio) 3rem;
+}
+
+/* ---------- Tarjeta principal ---------- */
+.principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 520px;
+    margin: 0 auto 3rem;
+    padding: var(--espacio);
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+}
+
+/* Las fotos llegan con tamaños distintos:
+   aspect-ratio + object-fit las igualan sin deformarlas */
+.foto {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 12px;
+    background-color: var(--color-acento-claro);
+}
+
+.estado {
+    min-height: 1.5em;
+    font-family: var(--fuente-codigo);
+    color: var(--color-acento);
+}
+
+.etiquetas {
+    color: var(--color-suave);
+    text-align: center;
+}
+
+/* ---------- Botones y formularios ---------- */
+.boton {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.boton:hover {
+    transform: scale(1.05);
+}
+
+.fila {
+    display: flex;
+    gap: 0.5rem;
+}
+
+input,
+select {
+    flex: 1;
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+    background-color: var(--color-superficie);
+    font: inherit;
+    min-width: 0;
+}
+
+/* ---------- Retos ---------- */
+.retos h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.retos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio);
+}
+
+.reto {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: var(--espacio);
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+}
+
+.reto h3 span {
+    display: inline-block;
+    margin-right: 0.4rem;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    background-color: var(--color-texto);
+    color: var(--color-acento);
+    font-family: var(--fuente-codigo);
+    font-size: 0.8rem;
+    vertical-align: middle;
+}
+
+.reto .boton {
+    align-self: flex-start;
+}
+
+/* En las tarjetas anchas, la foto no crece más de 520px */
+.reto--ancho .foto {
+    max-width: 520px;
+    align-self: center;
+}
+
+/* Reto 6: en móvil el texto ocupa su propia línea */
+#form-gif {
+    flex-wrap: wrap;
+}
+
+#texto-gif {
+    flex: 1 1 100%;
+}
+
+#formato {
+    flex: 1;
+}
+
+.fila .boton {
+    flex-shrink: 0;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.galeria img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 10px;
+    background-color: var(--color-acento-claro);
+}
+
+/* ---------- Pie ---------- */
+.pie {
+    padding: var(--espacio);
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-suave);
+}
+
+.pie a {
+    color: inherit;
+}
+
+/* ---------- Tablet y escritorio ---------- */
+@media (min-width: 768px) {
+    .retos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .retos h2,
+    .reto--ancho {
+        grid-column: span 2;
+    }
+
+    .galeria {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Reto 6: en escritorio, todo en una fila */
+    #form-gif {
+        flex-wrap: nowrap;
+    }
+
+    #texto-gif {
+        flex: 1;
+    }
+
+    #formato {
+        flex: 0 0 auto;
+        width: auto;
+    }
+}

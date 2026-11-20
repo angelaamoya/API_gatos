@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatitos al azar · Primera API</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ============ CABECERA ============ -->
+    <header class="cabecera">
+        <p class="cabecera__kicker">Tema 6 · Mi primera API</p>
+        <h1>Gatitos <span>al azar</span></h1>
+        <p class="cabecera__texto">Cada gato llega de la API <b>Cat as a service</b> (cataas.com).</p>
+    </header>
+
+    <main>
+
+        <!-- ============ PASO 1: EL EJERCICIO PRINCIPAL ============ -->
+        <section class="principal">
+            <img id="gato" class="foto" src="img/esperando.svg" alt="Un gato al azar">
+            <!-- Reto 1 -->
+            <p id="estado" class="estado"></p>
+            <!-- Reto 2 -->
+            <p id="etiquetas" class="etiquetas"></p>
+            <button type="button" id="otro" class="boton">Otro gato</button>
+        </section>
+
+        <!-- ============ RETOS ============ -->
+        <section class="retos">
+            <h2>Retos</h2>
+
+            <!-- Reto 3 -->
+            <article class="reto">
+                <h3><span>Reto 3</span> Un gato que habla</h3>
+                <form id="form-habla" class="fila">
+                    <input type="text" id="texto" placeholder="Escribe algo" maxlength="30">
+                    <button type="submit" class="boton">Que lo diga</button>
+                </form>
+                <img id="gato-habla" class="foto" src="img/esperando.svg" alt="Un gato con un mensaje">
+            </article>
+
+            <!-- Reto 4 -->
+            <article class="reto">
+                <h3><span>Reto 4</span> Gatos por etiqueta</h3>
+                <div class="fila">
+                    <select id="etiqueta">
+                        <option value="">Elige una etiqueta</option>
+                        <option value="cute">cute (monos)</option>
+                        <option value="orange">orange (naranjas)</option>
+                        <option value="black">black (negros)</option>
+                        <option value="white">white (blancos)</option>
+                        <option value="kitten">kitten (cachorros)</option>
+                        <option value="sleeping">sleeping (durmiendo)</option>
+                        <option value="box">box (en una caja)</option>
+                    </select>
+                    <button type="button" id="otro-etiqueta" class="boton">Otro gato</button>
+                </div>
+                <img id="gato-etiqueta" class="foto" src="img/esperando.svg" alt="Un gato de la etiqueta elegida">
+            </article>
+
+            <!-- Reto 5 -->
+            <article class="reto reto--ancho">
+                <h3><span>Reto 5</span> Una galería de gatos</h3>
+                <button type="button" id="cargar-galeria" class="boton">Cargar galería</button>
+                <div id="galeria" class="galeria"></div>
+            </article>
+
+            <!-- Reto 6 -->
+            <article class="reto reto--ancho">
+                <h3><span>Reto 6</span> Imagen o GIF, con tu texto</h3>
+                <form id="form-gif" class="fila">
+                    <input type="text" id="texto-gif" placeholder="Escribe un texto" maxlength="30">
+                    <select id="formato">
+                        <option value="imagen">Imagen</option>
+                        <option value="gif">GIF animado</option>
+                    </select>
+                    <button type="submit" class="boton">Pedir gato</button>
+                </form>
+                <img id="gato-gif" class="foto" src="img/esperando.svg" alt="Un gato con el texto escrito">
+            </article>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <p>Imágenes: <a href="https://cataas.com/" target="_blank" rel="noopener">Cat as a service</a> · Ejercicio de clase · Diseño Web Avanzado</p>
+    </footer>
+
+    <!-- Enlaza aquí, en este orden:
+         jQuery: https://code.jquery.com/jquery-3.7.1.min.js
+         y después vuestro js/script.js -->
+
+</body>
+</html>
