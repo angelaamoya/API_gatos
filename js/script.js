@@ -16,14 +16,20 @@ function cargarGato(){
    console.log("estas pidiendo un gato aleatorio!");
 
       fetch("https://cataas.com/cat?json=true")
-      .then(function() {
+      .then(function(response) {
+         return response.json();
+      })
+      .then(function(data) {
+         console.log(data);
+         console.log(data.url);
 
+         var img__gato = data.url;
 
-      }).then(function() {
-
+         $("#gato").attr("src" , img__gato);
 
       })
-
+   }
+   cargarGato();
 $("#otro").on("click" , cargarGato);
 
 /* RETO 1 · Cargando y error
