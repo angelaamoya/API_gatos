@@ -12,9 +12,19 @@
    d) Pon esa dirección en el src de #gato con .attr().
    e) Mete el fetch en una función cargarGato(): llámala al cargar
       la página y al hacer clic en #otro. */
+function cargarGato(){
+   console.log("estas pidiendo un gato aleatorio!");
+
+      fetch("https://cataas.com/cat?json=true")
+      .then(function() {
 
 
+      }).then(function() {
 
+
+      })
+
+$("#otro").on("click" , cargarGato);
 
 /* RETO 1 · Cargando y error
    - Antes del fetch, escribe "Cargando..." en #estado.
@@ -70,4 +80,3 @@
      Si es "gif",    pide https://cataas.com/cat/gif/says/TEXTO?json=true
    - Pon el resultado en #gato-gif.
    Extra: añade a la URL &fontColor=orange o &fontSize=40 y mira qué pasa. */
-
