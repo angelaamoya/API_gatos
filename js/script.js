@@ -103,9 +103,9 @@ function cargarGatoEtiqueta() {
    .then(function(response){
       return response.json();
    })
-   .then(function(data){
-      $("")
-   })
+         .then(function(data){
+            $("#gato-etiqueta").attr("src",data.url);
+         });
 }
 
 
