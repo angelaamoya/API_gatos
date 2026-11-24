@@ -14,7 +14,7 @@
       la página y al hacer clic en #otro. */
 function cargarGato(){
    console.log("estas pidiendo un gato aleatorio!");
-
+      $("#estado").text("Cargando...")
       fetch("https://cataas.com/cat?json=true")
       .then(function(response) {
          return response.json();
@@ -32,11 +32,15 @@ function cargarGato(){
    cargarGato();
 $("#otro").on("click" , cargarGato);
 
+
 /* RETO 1 · Cargando y error
    - Antes del fetch, escribe "Cargando..." en #estado.
    - Cuando la imagen #gato termine de cargar (evento "load"), vacía #estado.
    - Añade un .catch() que escriba un mensaje de error en #estado. */
-
+$("#gato").on("load" , function(){
+   console.log("imagen cargada!");
+   $("#estado").text("");
+})
 
 
 
