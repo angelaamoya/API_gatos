@@ -115,9 +115,21 @@ function cargarGatoEtiqueta() {
    - Esta vez llega un ARRAY de gatos, y no traen url:
      la imagen de cada uno es https://cataas.com/cat/ + su id.
    - Recorre el array con un for y añade un <img> por gato en #galeria. */
+$("#cargar-galeria").on("click" , function(){
+   fetch("https://cataas.com/api/cats?tags=cute&limit=6")
+   .then(function(response){
+      return response.json();
+   })
+   .then(function(data){
+     console.log(data);
+   });
 
+   for(var i = 0; i < data.length; i++) {
+      var url = "https://cataas.com/cat/" + data[i].id;
 
-
+      $("#galeria").append("<img src='" + url + "alt""'>");
+   }
+})
 
 /* RETO 6 · Imagen o GIF, con tu texto
    Al enviar #form-gif:
@@ -126,3 +138,12 @@ function cargarGatoEtiqueta() {
      Si es "gif",    pide https://cataas.com/cat/gif/says/TEXTO?json=true
    - Pon el resultado en #gato-gif.
    Extra: añade a la URL &fontColor=orange o &fontSize=40 y mira qué pasa. */
+$("#form-gif").on("submit" , function(event){
+   event.preventDefault();
+
+   var texto = $("#texto-gif").val();
+   var formato = $("#formato").val();
+
+   if(texto === ""){
+      return;
+   }  
